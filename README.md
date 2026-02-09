@@ -20,27 +20,30 @@ Built with **pure Java**, using no external libraries. This project is part of t
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/icopoglu/task-tracker-cli.git](https://github.com/icopoglu/task-tracker-cli.git)
+git clone https://github.com/icopoglu/task-tracker-cli.git
 cd task-tracker-cli
+```
 
-2. Compile the Code
+### 2. Compile the Code
+```bash
 javac src/*.java
+```
 
-3. Run the Application
+### 3. Run the Application
+```bash
 java -cp src TaskTracker add "Buy groceries"
 
-List tasks
+// List tasks
 java -cp src TaskTracker list
-
-4. Create an Alias (Optional)
-alias task-cli="java -cp src TaskTracker"
-
-Now you can use
-task-cli add "Finish the project"
-task-cli list done
 ```
-### Project Structure
 
+### 4. Create an Alias (Optional)
+```bash
+alias task-cli="java -cp src TaskTracker"
+```
+
+### Project Structure
+```text
 task-tracker-cli/
 ├── src/
 │   ├── TaskTracker.java  # Main entry point (CLI logic)
@@ -49,12 +52,15 @@ task-tracker-cli/
 ├── data/                 # Stores tasks.json (Auto-generated at runtime)
 ├── .gitignore
 └── README.md
-
+```
 ### Command Referance
 
-add	add <description>	Create a new task.
-list	list [status]	List all tasks or filter by status (todo, done, in-progress).
-update	update <id> <desc>	Update a task's description.
-delete	delete <id>	Remove a task.
-mark-in-progress	mark-in-progress <id>	Change status to IN_PROGRESS.
-mark-done	mark-done <id>	Change status to DONE.
+| Command | Usage | Description |
+|---------|-------|-------------|
+| `add` | `add <description>` | Create a new task. |
+| `list` | `list` | List all tasks. |
+| `list` | `list [status]` | Filter tasks by status (todo, done, in-progress). |
+| `update` | `update <id> <desc>` | Update a task's description. |
+| `delete` | `delete <id>` | Remove a task. |
+| `mark-in-progress` | `mark-in-progress <id>` | Change status to IN_PROGRESS. |
+| `mark-done` | `mark-done <id>` | Change status to DONE. |
